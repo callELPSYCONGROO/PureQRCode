@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PureQRCode</string>
+
+    <string name="titleFull">PureQRCode</string>
+    <string name="titleShort">PQRC</string>
+
+    <string name="subTitle">——纯净的二维码工具</string>
+
+    <string name="operation">操作</string>
+    <string name="analysisQR">扫描二维码</string>
+    <string name="lable_analysis">解析二维码</string>
+    <string name="createQR">创建二维码</string>
+    <string name="lable_create">生成二维码</string>
+
+    <string name="result">结果</string>
+    <string name="noneResult">操作结果将显示在这里</string>
+    <string name="reOperation">重来</string>
+    <string name="save">保存</string>
+    <string name="copy">复制</string>
+
+
+    <string name="createEditTest">请输入二维码内容</string>
+    <string name="createQRBtn">生成</string>
+</resources>
