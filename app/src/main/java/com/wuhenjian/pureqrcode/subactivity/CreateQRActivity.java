@@ -18,17 +18,16 @@ public class CreateQRActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // 获取文本框内容
-        EditText editText = findViewById(R.id.createQREditText);
-        final String input = editText.getText().toString();
+        setContentView(R.layout.activity_create);
 
         findViewById(R.id.createQRBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 获取文本框内容
+                EditText editText = findViewById(R.id.createQREditText);
+                String input = editText.getText().toString();
                 Intent data = new Intent();
-                data.putExtra("createQR", input);
+                data.putExtra(RequestResultCodeContant.CREATE_QR_KEY, input);
                 setResult(RequestResultCodeContant.CREATE_RESULT_CODE, data);
                 // 关闭当前页面
                 finish();

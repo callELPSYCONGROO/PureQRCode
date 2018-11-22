@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@mipmap/analysis_img"
+            android:src="@mipmap/analysis_img"
             android:contentDescription="@string/analysisQR" />
 
         <ImageButton
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@mipmap/create_img"
+            android:src="@mipmap/create_img"
             android:contentDescription="@string/createQR" />
     </LinearLayout>
 

@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.wuhenjian.pureqrcode.contants.RequestResultCodeContant;
 import com.wuhenjian.pureqrcode.subactivity.AnalysisQRActivity;
@@ -17,12 +16,6 @@ import com.wuhenjian.pureqrcode.subactivity.CreateQRActivity;
  */
 public class MainActivity extends Activity {
 
-    /** 创建按钮 */
-    private Button createBtn;
-
-    /** 解析按钮 */
-    private Button analysisBtn;
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +23,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         final Context mainActivity = this;
         // 获取创建按钮
-        createBtn = findViewById(R.id.analysisQRImageButton);
-        // 绑定点击事件
-        createBtn.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.analysisQRImageButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 只做跳转
                 startActivityForResult(new Intent(mainActivity, CreateQRActivity.class), RequestResultCodeContant.CREATE_REQUEST_CODE);
             }
         });
         // 获取解析按钮
-        analysisBtn = findViewById(R.id.createQRImageButton);
-        // 绑定点击事件
-        analysisBtn.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.createQRImageButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(mainActivity, AnalysisQRActivity.class), RequestResultCodeContant.ANALYSIS_REQUEST_CODE);
@@ -59,14 +47,14 @@ public class MainActivity extends Activity {
             // 创建回调
             case RequestResultCodeContant.CREATE_REQUEST_CODE:
                 if (resultCode == RequestResultCodeContant.CREATE_RESULT_CODE) {
-                    String createQR = data.getStringExtra("createQR");
+                    String createQR = data.getStringExtra(RequestResultCodeContant.CREATE_QR_KEY);
                     System.out.println(createQR);
                 }
                 break;
             // 解析回调
             case RequestResultCodeContant.ANALYSIS_REQUEST_CODE:
                 if (resultCode == RequestResultCodeContant.ANALYSIS_RESULT_CODE) {
-                    String analysisQR = data.getStringExtra("analysisQR");
+                    String analysisQR = data.getStringExtra(RequestResultCodeContant.ANALYSIS_STRING_KEY);
                     System.out.println(analysisQR);
                 }
                 break;
